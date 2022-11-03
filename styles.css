@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+
+/*header section*/
+
+.header{
+  width: min(90%,500px);
+  margin: auto;
+  margin-top: 1rem;
+  border: 0.2rem solid hsl(217, 16%, 45%);
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header ul {
+  padding: 1rem;
+
+}
+.header ul li {
+  list-style: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.score-section {
+  background-color: whitesmoke;
+  border-radius: 0.3rem;
+  text-align: center;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0 2rem 0 2rem;
+}
+.score-section h6{
+    color: hsl(229, 64%, 46%);
+    font-size: 1rem;
+    font-weight: 200;
+  padding-top: 0.2rem;
+  }
+.score-section p {
+  color: gray;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/*main game section*/
+
+.game {
+    background: center / contain no-repeat url(../images/bg-pentagon.svg);
+     background-size: 15rem;
+     height: 467px;
+     margin-inline: auto;
+}
+
+.game button img {
+  width: 2rem;
+}
+.game button {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+
+.rock {
+  border: 0.7rem solid #dc2e4e;
+}
+
+.paper {
+  border: 0.7rem solid #4865f4;
+}
+.scissors {
+  border: 0.7rem solid #ec9e0e;
+}
+.lizard {
+  border: 0.7rem solid #834fe3;
+}
+.spock {
+  border: 0.7rem solid #40b9ce;
+}
+
+/*rules button */
+.rules button{
+  background-color: transparent;
+  border: 0.1rem solid hsl(217, 16%, 45%);
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  
+}
+.rules {
+  width: 7rem;
+  margin-inline: auto;
+}
