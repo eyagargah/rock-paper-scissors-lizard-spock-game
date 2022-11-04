@@ -60,36 +60,83 @@ body{
 .game {
     background: center / contain no-repeat url(../images/bg-pentagon.svg);
      background-size: 15rem;
-     height: 467px;
+     height: 400px;
+     width: 300px;
      margin-inline: auto;
 }
 
 .game button img {
-  width: 2rem;
+  width: 1.5rem;
+}
+.grid-container {
+  padding-top: 4rem;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  display: grid;
+  grid-template-areas:
+    ' . . scissors . .'
+    '. . . . .'
+    'spock . . . paper'
+    '. . . . .'
+    '. lizard . rock .';
 }
 .game button {
   border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
+  margin-inline: auto;
 }
 
 .rock {
   border: 0.7rem solid #dc2e4e;
+  grid-area: rock;
 }
 
 .paper {
   border: 0.7rem solid #4865f4;
+  grid-area: paper;
+
 }
 .scissors {
   border: 0.7rem solid #ec9e0e;
+  grid-area: scissors;
+
 }
 .lizard {
   border: 0.7rem solid #834fe3;
+  grid-area: lizard;
+
 }
 .spock {
   border: 0.7rem solid #40b9ce;
+  grid-area: spock;
+
 }
 
+/*rules section*/
+.modal {
+  background-color: whitesmoke;
+  width: 23rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.5rem;
+}
+.modal .content {
+  padding: 1rem;
+}
+
+.modal header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.modal p{
+  font-size: 1.5rem;
+  color: hsl(214, 47%, 23%);
+}
 /*rules button */
 .rules button{
   background-color: transparent;
