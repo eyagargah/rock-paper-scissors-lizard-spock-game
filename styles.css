@@ -117,25 +117,28 @@ body{
 .modal {
   background-color: whitesmoke;
   width: 23rem;
+  height: 38rem;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .modal .content {
   padding: 1rem;
-}
-
-.modal header{
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+  order: 2;
 }
 
 .modal p{
   font-size: 1.5rem;
   color: hsl(214, 47%, 23%);
+  order: 1;
+}
+.modal .close{
+  order: 3;
+
 }
 /*rules button */
 .rules button{
@@ -152,4 +155,6 @@ body{
 .rules {
   width: 7rem;
   margin-inline: auto;
+  
+
 }
