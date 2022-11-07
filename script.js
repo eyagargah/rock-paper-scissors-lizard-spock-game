@@ -21,19 +21,22 @@ gameBtns.forEach((gameBtn) => {
     userChoice = getUserChoice(e.target)
     houseChoice = generateHouseChoice()
     getResult()
-    replay()
+    createReplayBtn()
 
     /* game.classList.add('hidden')
     getResult(); */
   });
 });
-
+function createReplayBtn(){
+  var playAgainBtnDisplay = document.createElement('button')
+  playAgainBtnDisplay.setAttribute('class', 'replayBtn');  
+  playAgainBtnDisplay.textContent = 'Play Again';
+  playAgainDiv.append(playAgainBtnDisplay)
+  var playAgainBtn = document.querySelector(".replayBtn")
+  
+}
 function replay(){
-  var playAgainBtn = document.createElement('button')
-  playAgainBtn.setAttribute('content', 'test content');
-  playAgainBtn.setAttribute('class', 'btn');  
-  playAgainBtn.textContent = 'Play Again';
-  playAgainDiv.append(playAgainBtn)
+  
 
 }
 
