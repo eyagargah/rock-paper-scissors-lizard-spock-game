@@ -194,11 +194,13 @@ input {
 .choice {
   border: 10px solid black;
   height: 350px;
-  width: 600px;
+  width: min(90%,600px);
   margin-inline: auto;
 }
 
-
+.choice p {
+  color: white;
+}
 /*rules button */
 .openModalBtn{
   background-color: transparent;
