@@ -35,32 +35,32 @@
           <input type="image" id="scissors" src="images/icon-scissors.svg" />
           <input type="image" id="lizard" src="images/icon-lizard.svg" />
           <input type="image" id="spock" src="images/icon-spock.svg" />
-          
         </div>
       </section>
-      <section class="choice hidden">
-        <div class="user-pick">
+      <section class="choice hidden flex-row">
+        <div class="flex-column">
           <p>You picked</p>
-          
+          <div class="user-pick"></div>
         </div>
-        <div class="result">
-          <button>Play again</button>
-        </div>
-        <div class="house-pick">
+        <div class="result"></div>
+        <button class="playAgain">Play again</button>
+        <div class="flex-column">
           <p>the house picked</p>
-        
-          </div>
+          <div class="house-pick"></div>
         </div>
       </section>
       <div class="rules">
         <button class="openModalBtn">Rules</button>
         <div class="modal close">
-            <p>Rules</p>
-            <span class="closeBtn">
-              <img src="/images/icon-close.svg" alt="close icon" />
-            </span>
+          <p>Rules</p>
+          <span class="closeBtn">
+            <img src="/images/icon-close.svg" alt="close icon" />
+          </span>
           <div class="content">
-            <img src="/images/image-rules-bonus.svg" alt="picture of game rules" />
+            <img
+              src="/images/image-rules-bonus.svg"
+              alt="picture of game rules"
+            />
           </div>
         </div>
       </div>
