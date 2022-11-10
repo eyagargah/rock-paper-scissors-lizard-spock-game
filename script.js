@@ -1,127 +1,126 @@
+function game(){
+const winningCombos = ['scissorspaper', 'paperrock', 'rocklizard', 'lizardspock', 'spockscissors',
+'rockscissors', 'scissorslizard', 'lizardpaper', 'paperspock', 'spockrock']
+const userChoiceDisplay = document.querySelector(".user-pick");
+const houseChoiceDisplay = document.querySelector(".house-pick");
+const resultDisplay = document.querySelector(".result");
+const choiceDisplay = document.querySelector(".choice");
+const game = document.querySelector(".game");
+const gameBtns = game.querySelectorAll("input");
+const playAgainBtn = document.querySelector(".playAgain")
+const scoreDisplay = document.querySelector('.score')
+let userChoice, houseChoice;
+
+window.addEventListener("load", () => {
+  getLastScoreFromLocalStorage();
+
+  gameBtns.forEach((gameBtn) => {
+    gameBtn.addEventListener("click", (e) => {
+      game.classList.add("hidden");
+      choiceDisplay.classList.remove("hidden");
+      userChoice = getUserChoice(e.target);
+      houseChoice = generateHouseChoice();
+      
+      startGame()
+  
+      
+    });
+  });
+  console.log(resultDisplay)
+  playAgainBtn.addEventListener('click', ()=>{
+    game.classList.remove("hidden")
+    choiceDisplay.classList.add("hidden")
+  })
+});
+
+
+function startGame(){
+  getResult(userChoice, houseChoice)
+
+  clearChoices()
+  buildChoiceElement(true,userChoice)
+  buildChoiceElement(false,houseChoice)
+
+}
+
+
+/*Build choices section */
+function getUserChoice(target) {
+  if ((target.tagName = "INPUT")) {
+    return target.id;
+  }
+  return target.id;
+}
+
+
+function generateHouseChoice() {
+  const randomNumber = Math.floor(Math.random() * gameBtns.length);
+  houseChoice = gameBtns[randomNumber].id;
+  return houseChoice;
+}
+
+function buildChoiceElement(isUserChoice , userChoice){
+  const element = document.createElement('input')
+  element.type = "image"
+  element.src = `/images/icon-${userChoice}.svg`
+  element.id = userChoice
+  if(isUserChoice){
+    userChoiceDisplay.append(element)
+  }else{
+    houseChoiceDisplay.append(element)
+  }
+
+}
+
+/*Result of each case */
+function getResult(userChoice,houseChoice) {
+  if (userChoice === houseChoice) {
+    resultDisplay.innerText = " It's a Tie";
+} else if (getUserWinsStatus(userChoice + houseChoice)) {
+  resultDisplay.innerText = 'You win';
+    calculateScore(1);
+} else {
+  resultDisplay.innerText = 'You lose';
+    calculateScore(-1);
+}
+  }
+
+
+function getUserWinsStatus(result){
+  return winningCombos.some( winningCombo => winningCombo === result )
+}
+
+
+function clearChoices(){
+  userChoiceDisplay.innerHTML= ''
+  houseChoiceDisplay.innerHTML =''
+}
+function calculateScore(roundScore){
+  currentScore += roundScore
+  updateScoreDisplay()
+}
+
+
+
+function getLastScoreFromLocalStorage() {
+  let score = +window.localStorage.getItem('gameScore') || 0
+  currentScore = score;
+  updateScoreDisplay()
+}
+
+
+
+function updateScoreDisplay(){
+  scoreDisplay.innerHTML = currentScore
+  window.localStorage.setItem('gameScore', currentScore)
+}
+
+/*Modal control */
 const Close_Modal_Btn = document.querySelector(".closeBtn");
 const Rules_Modal = document.querySelector(".modal");
 const Open_Rules_Btn = document.querySelector(".openModalBtn");
 
-const userChoiceDisplay = document.querySelector(".user-pick");
-const houseChoiceDisplay = document.querySelector(".house-pick");
-const resultDisplay = document.querySelector(".result");
-const resultExplanation = document.querySelector(".explanation");
-const game = document.querySelector(".game");
-const gameBtns = game.querySelectorAll("input");
-const userChoiceBtn = document.querySelector(".user-picked-display")
-const houseChoiceBtn = document.querySelector(".house-picked-display")
-const playAgainDiv = document.querySelector(".playAgain")
-let userChoice;
-let houseChoice;
 
-
-gameBtns.forEach((gameBtn) => {
-  gameBtn.addEventListener("click", (e) => {
-    game.classList.add('hidden')
-    userChoice = getUserChoice(e.target)
-    houseChoice = generateHouseChoice()
-    getResult()
-    createReplayBtn()
-
-    /* game.classList.add('hidden')
-    getResult(); */
-  });
-});
-function createReplayBtn(){
-  var playAgainBtnDisplay = document.createElement('button')
-  playAgainBtnDisplay.setAttribute('class', 'replayBtn');  
-  playAgainBtnDisplay.textContent = 'Play Again';
-  playAgainDiv.append(playAgainBtnDisplay)
-  var playAgainBtn = document.querySelector(".replayBtn")
-  
-}
-function replay(){
-  
-
-}
-
-function getUserChoice(target){
-    if(target.tagName = 'INPUT')
-    {
-      var newTarget = target
-      userChoiceDisplay.append(newTarget)
-        return target.id
-    }
-    return target.id
-}
-function generateHouseChoice() {
-  const randomNumber = Math.floor(Math.random() * gameBtns.length);
-  houseChoice = gameBtns[randomNumber].id;
-  var housePick = document.getElementById(houseChoice)
-  houseChoiceDisplay.append(housePick)
-  return houseChoice
-}
-
-function getResult() {
-  switch (userChoice + houseChoice) {
-    case "scissorspaper":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " cuts " + houseChoice;
-      break;
-    case "scissorslizard":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " decapitates " + houseChoice;
-      break;
-    case "spockscissors":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " smashes " + houseChoice;
-      break;
-    case "spockrock":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " vaporizes " + houseChoice;
-      break;
-    case "lizardpaper":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " eats " + houseChoice;
-      break;
-    case "lizardspock":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " poisons " + houseChoice;
-      break;
-    case "rocklizard":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " crushes " + houseChoice;
-      break;
-    case "rockscissors":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " crushes " + houseChoice;
-      break;
-    case "paperrock":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " covers " + houseChoice;
-      break;
-    case "paperspock":
-      resultDisplay.innerHTML = "You Win";
-      resultExplanation.innerHTML = userChoice + " disapproves " + houseChoice;
-      break;
-    case "paperscissors":
-    case "lizardscissors":
-    case "scissorsspock":
-    case "rockspock":
-    case "paperlizard":
-    case "spocklizard":
-    case "lizardrock":
-    case "scissorsrock":
-    case "rockpaper":
-    case "spockpaper":
-      resultDisplay.innerHTML = "You Lose";
-      break;
-    case "scissorsscissors":
-    case "spockspock":
-    case "lizardlizard":
-    case "rockrock":
-    case "paperpaper":
-      resultDisplay.innerHTML = "It's a Tie!";
-      break;
-  }
-}
-
-/*Modal control */
 Open_Rules_Btn.addEventListener("click", () => {
   Rules_Modal.classList.remove("close");
   Rules_Modal.classList.add("open");
@@ -131,3 +130,6 @@ Close_Modal_Btn.addEventListener("click", () => {
   Rules_Modal.classList.remove("open");
   Rules_Modal.classList.add("close");
 });
+}
+
+game()
