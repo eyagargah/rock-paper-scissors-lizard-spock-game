@@ -186,21 +186,28 @@ input {
   cursor: pointer;
 
 }
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /*choice section*/
 
 .choice {
-  border: 10px solid black;
+  margin-top: 2rem;
+  border: 2px solid black;
   height: 350px;
   width: min(90%,600px);
   margin-inline: auto;
+  padding: 2rem;
 }
 
 .choice p {
   color: white;
+}
+.flex-row{
+display: flex;
+flex-flow: row nowrap;
 }
 /*rules button */
 .openModalBtn{
