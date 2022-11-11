@@ -1,22 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-body{
-  background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-  background-attachment: fixed; 
+body {
+  background: radial-gradient(
+    circle at top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  background-attachment: fixed;
 }
-
 
 /*header section*/
 
-.header{
-  width: min(90%,500px);
+.header {
+  width: min(90%, 500px);
   margin: auto;
   margin-top: 1rem;
   border: 0.2rem solid hsl(217, 16%, 45%);
@@ -27,7 +30,6 @@ body{
 
 .header ul {
   padding: 1rem;
-
 }
 .header ul li {
   list-style: none;
@@ -44,12 +46,12 @@ body{
   margin: 0.5rem 1rem 0.5rem 1rem;
   padding: 0 2rem 0 2rem;
 }
-.score-section h6{
-    color: hsl(229, 64%, 46%);
-    font-size: 1rem;
-    font-weight: 200;
+.score-section h6 {
+  color: hsl(229, 64%, 46%);
+  font-size: 1rem;
+  font-weight: 200;
   padding-top: 0.2rem;
-  }
+}
 .score-section p {
   color: gray;
   font-size: 3rem;
@@ -59,11 +61,11 @@ body{
 /*main game section*/
 
 .game {
-    background: center / contain no-repeat url(../images/bg-pentagon.svg);
-     background-size: 15rem;
-     height: 450px;
-     width: 300px;
-     margin-inline: auto;
+  background: center / contain no-repeat url(../images/bg-pentagon.svg);
+  background-size: 15rem;
+  height: 450px;
+  width: 300px;
+  margin-inline: auto;
 }
 
 .game button img {
@@ -71,16 +73,16 @@ body{
 }
 .grid-container {
   padding-top: 4rem;
-  grid-template-columns: repeat(5,55px);
-  grid-template-rows: repeat(5,45px);
+  grid-template-columns: repeat(5, 55px);
+  grid-template-rows: repeat(5, 45px);
   display: grid;
   grid-template-areas:
-    ' . . scissors . .'
-    '. . . . .'
-    'spock . . . paper'
-    '. . . . .'
-    '. . . . .'
-    '. lizard . rock .';
+    " . . scissors . ."
+    ". . . . ."
+    "spock . . . paper"
+    ". . . . ."
+    ". . . . ."
+    ". lizard . rock .";
 }
 
 input {
@@ -98,52 +100,47 @@ input {
   grid-area: rock;
 }
 #rock:hover {
-  background-color:#dc2e4e ;
+  background-color: #dc2e4e;
   transition: all 0.3s;
 }
 
 #paper {
   border: 0.7rem solid #4865f4;
   grid-area: paper;
-
 }
 
 #paper:hover {
-  background-color:#4865f4 ;
+  background-color: #4865f4;
   transition: all 0.3s;
 }
 
 #scissors {
   border: 0.7rem solid #ec9e0e;
   grid-area: scissors;
-
 }
 
 #scissors:hover {
-  background-color:#ec9e0e ;
+  background-color: #ec9e0e;
   transition: all 0.3s;
 }
 
 #lizard {
   border: 0.7rem solid #834fe3;
   grid-area: lizard;
-
 }
 #lizard:hover {
-  background-color:#834fe3 ;
+  background-color: #834fe3;
   transition: all 0.3s;
 }
 
 #spock {
   border: 0.7rem solid #40b9ce;
   grid-area: spock;
-
 }
 #spock:hover {
-  background-color:#40b9ce ;
+  background-color: #40b9ce;
   transition: all 0.3s;
 }
-
 
 /*rules section*/
 .modal {
@@ -162,29 +159,28 @@ input {
   gap: 3rem;
 }
 
-.modal.open{
+.modal.open {
   visibility: visible;
 }
 
 .modal.close {
-  display: none;;
+  display: none;
 }
 .modal .content {
   padding: 1rem;
   order: 2;
 }
 
-.modal p{
+.modal p {
   font-size: 1.5rem;
   color: hsl(214, 47%, 23%);
   order: 1;
   font-weight: 700;
   text-transform: uppercase;
 }
-.modal .closeBtn{
+.modal .closeBtn {
   order: 3;
   cursor: pointer;
-
 }
 
 .hidden {
@@ -197,20 +193,28 @@ input {
   margin-top: 2rem;
   border: 2px solid black;
   height: 350px;
-  width: min(90%,600px);
+  width: min(90%, 550px);
   margin-inline: auto;
   padding: 2rem;
 }
 
 .choice p {
   color: white;
+  font-size: 1.6rem;
+  text-transform: uppercase;
 }
-.flex-row{
-display: flex;
-flex-flow: row nowrap;
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
 }
 /*rules button */
-.openModalBtn{
+.openModalBtn {
   background-color: transparent;
   border: 0.1rem solid hsl(217, 16%, 45%);
   color: white;
