@@ -191,7 +191,6 @@ input {
 
 .choice {
   margin-top: 2rem;
-  border: 2px solid black;
   height: 350px;
   width: min(90%, 550px);
   margin-inline: auto;
@@ -212,6 +211,20 @@ input {
   display: flex;
   flex-flow: column nowrap;
   gap: 2rem;
+}
+
+.resultsSection {
+
+}
+.playAgain {
+  font-size: 1rem;
+  color: hsl(214, 47%, 23%);
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 10rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
 }
 /*rules button */
 .openModalBtn {
