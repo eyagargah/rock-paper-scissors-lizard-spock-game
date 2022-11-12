@@ -190,6 +190,7 @@ input {
 /*choice section*/
 
 .choice {
+  border: 2px solid black;
   margin-top: 2rem;
   height: 350px;
   width: min(90%, 550px);
@@ -208,13 +209,14 @@ input {
 }
 
 .flex-column {
+  width: 10rem;
   display: flex;
   flex-flow: column nowrap;
   gap: 2rem;
 }
 
 .resultsSection {
-
+  width: 8rem;
 }
 .playAgain {
   font-size: 1rem;
