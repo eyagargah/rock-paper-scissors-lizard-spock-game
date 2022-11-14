@@ -190,8 +190,9 @@ input {
 /*choice section*/
 
 .choice {
-  padding-top: 2rem;
-  width: min(100%, 500px);
+  border: 2px solid black;
+  padding: 2rem;
+  width: min(100%, 400px);
   margin-inline: auto;
   display: grid;
   grid-template-areas:
@@ -210,6 +211,7 @@ input {
 }
 
 .resultsSection {
+  padding-top: 2rem;
   grid-area: results;
   display: flex;
   flex-direction: column;
@@ -231,13 +233,11 @@ input {
   gap: 1.5rem;
 }
 
-
 .result {
   padding-bottom: 1rem;
   color: white;
-  font-size: 1.6rem;
   text-align: center;
-
+  text-transform: uppercase;
 }
 
 .playAgain {
@@ -245,7 +245,7 @@ input {
   color: hsl(214, 47%, 23%);
   font-weight: 700;
   text-transform: uppercase;
-  width: 8rem;
+  width: 6rem;
   height: 2rem;
   border-radius: 0.5rem;
   border: none;
@@ -266,4 +266,3 @@ input {
   width: 7rem;
   margin-inline: auto;
 }
-
