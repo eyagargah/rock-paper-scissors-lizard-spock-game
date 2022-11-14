@@ -276,9 +276,11 @@ input {
     flex-direction: column;
   }
   .choice {
+   justify-content: center;
     grid-template-areas: 
-    "user results results house";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    "user . results  . house";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
+    gap: 1rem;
   }
 }
