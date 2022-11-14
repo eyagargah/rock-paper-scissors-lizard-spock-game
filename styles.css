@@ -190,7 +190,6 @@ input {
 /*choice section*/
 
 .choice {
-  border: 2px solid black;
   padding-top: 2rem;
   width: min(100%, 500px);
   margin-inline: auto;
@@ -219,7 +218,7 @@ input {
 .user-choice {
   grid-area: user;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   gap: 1.5rem;
 }
@@ -227,7 +226,7 @@ input {
 .house-choice {
   grid-area: house;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   gap: 1.5rem;
 }
@@ -268,5 +267,3 @@ input {
   margin-inline: auto;
 }
 
-@media screen and (min-width: 768px) {
-}
