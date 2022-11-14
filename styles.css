@@ -267,3 +267,18 @@ input {
   width: 7rem;
   margin-inline: auto;
 }
+
+@media (min-width:768px){
+  .user-choice{
+    flex-direction: column;
+  }
+  .house-choice  {
+    flex-direction: column;
+  }
+  .choice {
+    grid-template-areas: 
+    "user results results house";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+  }
+}
