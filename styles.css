@@ -269,6 +269,7 @@ input {
 }
 
 @media (min-width:768px){
+  /*results section*/
   .user-choice{
     flex-direction: column;
   }
@@ -283,4 +284,6 @@ input {
     align-items: center;
     gap: 1rem;
   }
+
+ 
 }
