@@ -61,7 +61,7 @@ body {
 /*main game section*/
 
 .game {
-  background: center / contain no-repeat url(../images/bg-pentagon.svg);
+  background: center / contain no-repeat url(images/bg-pentagon.svg);
   background-size: 15rem;
   height: 450px;
   width: 300px;
