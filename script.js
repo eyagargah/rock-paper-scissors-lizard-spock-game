@@ -26,7 +26,6 @@ window.addEventListener("load", () => {
       
     });
   });
-  console.log(resultDisplay)
   playAgainBtn.addEventListener('click', ()=>{
     game.classList.remove("hidden")
     choiceDisplay.classList.add("hidden")
