@@ -62,7 +62,7 @@ function generateHouseChoice() {
 function buildChoiceElement(isUserChoice , userChoice){
   const element = document.createElement('input')
   element.type = "image"
-  element.src = `/images/icon-${userChoice}.svg`
+  element.src = `images/icon-${userChoice}.svg`
   element.id = userChoice
   if(isUserChoice){
     userChoiceDisplay.append(element)
